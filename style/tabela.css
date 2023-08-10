@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(74, 65, 199);
+    height: 100vh;
+}
+
+.tabela-1 {
+    display: grid;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    grid-template-columns: repeat(18, 1fr);
+    top: 37.5%;
+}
+
+.tabela-1 > .elemento:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 18;
+}
+
+.tabela-1 > .elemento:nth-child(5), .elemento:nth-child(13) {
+    grid-column-start: 13;
+}
+
+.elemento {
+    width: 45px;
+    height: 45px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
