@@ -8,22 +8,26 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template-columns: 275px 1fr;
+    grid-template-columns: 250px 1fr;
+    gap: 10px;
+}
+
+main {
+    position: relative;
+    margin-top: 25px;
 }
 
 .tabela-1 {
     display: grid;
-    position: absolute;
-    left: 60%;
-    transform: translate(-50%, -50%);
-
+    gap: 0;
     grid-template-columns: repeat(18, 1fr);
-    top: 37.5%;
+
 }
 
 .tabela-1 > .elemento:nth-child(1) {
     grid-column-start: 1;
     grid-column-end: 18;
+    width: 59px;
 }
 
 .tabela-1 > .elemento:nth-child(5), .elemento:nth-child(13) {
@@ -33,7 +37,7 @@ body {
 .tabela-2 {
     display: grid;
     position: absolute;
-    left: 66.3%;
+    left: 58%;
     top: 85%;
     transform: translate(-50%, -50%);
 
@@ -46,7 +50,7 @@ body {
 }
 
 .elemento {
-    width: 55px;
+    width: 100%;
     height: 60px;
     background: white;
     display: flex;
@@ -59,6 +63,7 @@ body {
     transform: scale(1.25);
     transition: all 200ms ease;
     z-index: 1;
+    cursor: pointer;
 }
 
 
@@ -75,6 +80,7 @@ body {
     font-weight: 600;
     text-align: center;
     font-size: 18px;
+    padding-top: 5px;
 }
 
 .container-elemento .numAtomico {
@@ -83,6 +89,10 @@ body {
     font-weight: 500;
     top: 0;
     right: 3px;
+}
+
+.invisivel {
+    display: none;
 }
 
 .container-elemento .nome {
@@ -97,7 +107,7 @@ body {
     text-align: center;
 }
 
-.legenda {
+.box-legenda, .box-informacoes {
     margin-left: 5px;
     margin-top: 35px;
     padding: 15px 5px;
@@ -106,7 +116,7 @@ body {
     position: relative;
 }
 
-.legenda > p {
+.box-legenda > p, .box-informacoes > p {
     position: absolute;
     display: inline-block;
     background-color: white;
@@ -116,14 +126,24 @@ body {
     font-weight: 600;
 }
 
+.ativo {
+    font-weight: 600;
+    color: #242124dc;
+}
+
+.container-campos > label, .container-campos > p{
+    display: inline-block;
+    margin-right: 5px;
+}
+
 
 #nao-metais::before, 
 #metais-alcalinos::before, 
 #metais-alcalinos-terra::before, 
 #metais-transicao::before, 
-#metais-represent::before, 
+#metais-representativos::before, 
 #semi-metais::before, 
-#gases-nobre::before,
+#gases-nobres::before,
 #halogenios::before, 
 #actinideos::before, 
 #lantanideos::before  {
@@ -134,8 +154,11 @@ body {
     margin-right: 12px;
     border: 1px solid black;
     border-radius: 5px;
-    
-    
+    cursor: pointer;
+}
+
+.box-legenda label {
+    cursor: pointer;
 }
 
 .nao-metais, #nao-metais::before {
@@ -146,7 +169,7 @@ body {
     background-color: #5dff3c;
 }
 
-.gases-nobres, #gases-nobre::before {
+.gases-nobres, #gases-nobres::before {
     background-color: #5227fc;
 }
 
@@ -162,7 +185,7 @@ body {
     background-color: #fffe27;
 }
 
-.metais-representativos, #metais-represent::before {
+.metais-representativos, #metais-representativos::before {
     background-color: #d1d0ce;
 }
 
@@ -176,4 +199,15 @@ body {
 
 .actinideos, #actinideos::before {
     background-color: #ff19f7;
+}
+
+.destaque {
+    transform: scale(1.10);
+    transition: all 200ms ease-in;
+    z-index: 1;
+
+}
+
+.nao-destaque {
+    background-color: black;
 }
