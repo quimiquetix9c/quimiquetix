@@ -1,4 +1,5 @@
 const grid = document.querySelector('.jogo')
+const timer = document.querySelector('.tempo')
 
 const images = [
     "aluminio-par1",
@@ -10,11 +11,22 @@ const images = [
     "oxigenio-par1",
     "oxigenio-par2",
     "sodio-par1",
-    "sodio-par2"
+    "sodio-par2",
+    "magnesio-par1",
+    "magnesio-par2",
+    "cloro-par1",
+    "cloro-par2",
+    "fosforo-par1",
+    "fosforo-par2",
+    "boro-par1",
+    "boro-par2",
+    "berilio-par1",
+    "berilio-par2",
 ]
 
 let firstCard = ''
 let secondCard = ''
+
 
 function revealCard(event) {
     if (event.target.parentNode.className.includes('reveal-card')) return
@@ -30,6 +42,15 @@ function revealCard(event) {
     }
 }
 
+function checksEndGames() {
+    const disabledCards = document.querySelectorAll('.disabled-card')
+
+    if (disabledCards.length == images.length) {
+        alert(`Parabéns, você venceu!!! O tempo para terminar o jogo foi: ${timer.innerHTML} segundos.`)
+        clearInterval(window.loop)
+    }
+}
+
 function checkCards() {
     const firstChoice = firstCard.getAttribute('data-image')
     const secondChoice = secondCard.getAttribute('data-image')
@@ -39,6 +60,7 @@ function checkCards() {
         secondCard.firstChild.classList.add('disabled-card')
         firstCard = ''
         secondCard = ''
+        checksEndGames()
 
     } else {
         setTimeout(() => {
@@ -50,6 +72,14 @@ function checkCards() {
         }, 1500)
 
     }
+}
+
+const timerCount = () => {
+    window.loop = setInterval(() => {
+        const currentTime = Number(timer.innerHTML)
+        timer.innerHTML = currentTime + 1
+
+    }, 1000)
 }
 
 function createElement(tag, classname) {
@@ -74,7 +104,6 @@ function createCard(image) {
     return card
 }
 
-
 function loadGame() {
     const shuffleImages = images.sort(() => Math.random() - 0.5)
 
@@ -85,4 +114,5 @@ function loadGame() {
     })
 }
 
+timerCount()
 loadGame()
