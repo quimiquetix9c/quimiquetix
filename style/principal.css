@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;
+}
+
+body,html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: url("../imgs/fundo-pagina-inicial.jpg") no-repeat center center fixed; 
+    background-size: 100% 100%;
+}
+
+.container {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .titulo {
+    font-family: "Bungee Shade";
+    margin-bottom: 32px;
+    font-size: 48px;
+    color: rgb(65,58,58);
+    user-select: none;
+}
+
+
+.nav {
+    list-style-type: none;
+}
+
+
+.nav-item:first-child {
+    margin-bottom: 15px;
+}
+
+.nav-item a{ 
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 16px;
+    display: block;
+    min-width: 170px;
+    text-align: center;
+}
+
+.nav-item a:hover {
+    font-size: 1.2rem;
+    color: rgb(252,252,252);
+    background-color: rgb(63,60,60);
+    transition: all 400ms ease;
+}

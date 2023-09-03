@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 10px;
+}
+
+main {
+    position: relative;
+    margin-top: 25px;
+}
+
+.tabela-1 {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(18, 1fr);
+
+}
+
+.tabela-1 > .elemento:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 18;
+    width: 59px;
+}
+
+.tabela-1 > .elemento:nth-child(5), .elemento:nth-child(13) {
+    grid-column-start: 13;
+}
+
+.tabela-2 {
+    display: grid;
+    position: absolute;
+    left: 58%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+
+    grid-template-columns: repeat(15, 1fr);
+    
+}
+
+.tabela-2 .elemento {
+    margin-bottom: 12px;
+}
+
+.elemento {
+    width: 100%;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.elemento:hover {
+    transform: scale(1.25);
+    transition: all 200ms ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+.container-elemento {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container-elemento .sigla {
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.container-elemento .numAtomico {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 500;
+    top: 0;
+    right: 3px;
+}
+
+.invisivel {
+    display: none;
+}
+
+.container-elemento .nome {
+    font-weight: 400;
+    font-size: 9px;
+    text-align: center;
+}
+
+.container-elemento .massa {
+    font-weight: 300;
+    font-size: 8px;
+    text-align: center;
+}
+
+.box-legenda, .box-informacoes {
+    margin-left: 5px;
+    margin-top: 35px;
+    padding: 15px 5px;
+    border: 1px solid black;
+    border-radius: 6px;
+    position: relative;
+}
+
+.box-legenda > p, .box-informacoes > p {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    margin-top: -38px;
+    margin-left: 24px;
+    padding: 10px 15px;
+    font-weight: 600;
+}
+
+.ativo {
+    font-weight: 600;
+    color: #242124dc;
+}
+
+.container-campos > label, .container-campos > p{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+#nao-metais::before, 
+#metais-alcalinos::before, 
+#metais-alcalinos-terra::before, 
+#metais-transicao::before, 
+#metais-representativos::before, 
+#semi-metais::before, 
+#gases-nobres::before,
+#halogenios::before, 
+#actinideos::before, 
+#lantanideos::before  {
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    margin-right: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box-legenda label {
+    cursor: pointer;
+}
+
+.nao-metais, #nao-metais::before {
+    background-color: #fe0000;
+}
+
+.semi-metais, #semi-metais::before {
+    background-color: #5dff3c;
+}
+
+.gases-nobres, #gases-nobres::before {
+    background-color: #5227fc;
+}
+
+.halogenios, #halogenios::before {
+    background-color: #e78013;
+}
+
+.metais-alcalinos, #metais-alcalinos::before {
+    background-color: #fbb301;
+}
+
+.metais-alcalinos-terra, #metais-alcalinos-terra::before {
+    background-color: #fffe27;
+}
+
+.metais-representativos, #metais-representativos::before {
+    background-color: #d1d0ce;
+}
+
+.metais-transicao, #metais-transicao::before {
+    background-color: #b7eecf;
+}
+
+.lantanideos, #lantanideos::before {
+    background-color: #ff8da4;
+}
+
+.actinideos, #actinideos::before {
+    background-color: #ff19f7;
+}
+
+.destaque {
+    transform: scale(1.10);
+    transition: all 200ms ease-in;
+    z-index: 1;
+
+}
+
+.nao-destaque {
+    background-color: black;
+}
