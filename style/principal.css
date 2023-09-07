@@ -11,7 +11,7 @@ body,html {
 }
 
 body {
-    background: url("../imgs/fundo-pagina-inicial.jpg") no-repeat center center fixed; 
+    background: url("../imgs/fundo-pagina-inicial.jpg") no-repeat center center; 
     background-size: 100% 100%;
 }
 
@@ -30,7 +30,7 @@ body {
 .container .titulo {
     font-family: "Bungee Shade";
     margin-bottom: 32px;
-    font-size: 3rem;
+    font-size: 4vw;
     color: rgb(65,58,58);
     user-select: none;
 }
@@ -62,4 +62,11 @@ body {
     color: rgb(252,252,252);
     background-color: rgb(63,60,60);
     transition: all 400ms ease;
+}
+
+@media screen and (max-width: 500px){
+    .container .titulo {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
 }

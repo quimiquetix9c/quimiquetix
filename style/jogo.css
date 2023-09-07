@@ -12,21 +12,23 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
+    padding: 20px 20px 50px;
     background-image: url("../imgs/fundo-jogo.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    position: relative;
-    padding: 20px 20px 50px;
 }
 
 header {
     width: 100%;
+    max-width: 520px;
     text-align: end;
-    padding: 15px 30px;
+    padding: 8px;
+    margin-top: 20px;
 }
 
 header span {
-    font-size: 1.1rem;
+    font-size: 1rem;
 
 }
 
@@ -38,27 +40,28 @@ header .tempo{
 }
 
 .container-jogo {
-    max-width: 800px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    padding: 20px 20px 50px;
+    
 }
 
 .jogo {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    width: 500px;
-    max-width: 800px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
 
 }
 
 .jogo .card {
     aspect-ratio: 3/4;
-    width: 100%;
     border-radius: 5px;
     position: relative;
     transition: all 400ms ease;

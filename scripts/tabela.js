@@ -43,6 +43,7 @@ function PopulaDadosTabela(inicio, quantidade, tabela, offset=0) {
         if (posGridAtual == 56) {
             area[i+inicio].innerHTML = `
             <div class="container-elemento lantanideos">
+                <p>Lantanídeos</p>
                 <p>* 57-71</p>
             </div>   
             
@@ -52,6 +53,7 @@ function PopulaDadosTabela(inicio, quantidade, tabela, offset=0) {
         else if (posGridAtual == 74){
             area[i+inicio].innerHTML = `
             <div class="container-elemento actinideos">
+                <p>Actinideos</p>
                 <p>* 89-103</p>
             </div>   
             `
